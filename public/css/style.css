@@ -1,0 +1,79 @@
+body{
+    display: flex;
+    justify-content: center;
+    
+}    
+.containerJogo{
+    width: 1025px;
+    height: 839px;
+    background-color: rgb(228, 226, 226);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.topJogo{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+    padding: 59px;
+    box-sizing: border-box;
+
+}
+
+.topJogo >img{
+    width: 400px;
+    
+}
+.topJogo >button{
+    width: 200px;
+    height: 60px;
+    background-color: #27AE60;
+    border-radius: 8px;
+
+    color: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+
+    
+
+}
+.topJogo > button:hover{
+    
+    background-color: #2abd67;
+   
+}
+
+.teclado{
+    background-color: #ffffff;
+    width: 850px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin-top: 50px;
+    
+}
+
+.teclado > button{
+    width: 40px;
+    height: 40px;
+    margin: 12px;
+    background: #9FAAB5;
+    border: 1px solid #7AA7C7;
+    border-radius: 3px;
+
+    text-transform: uppercase;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #798A9F;
+
+}
