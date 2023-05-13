@@ -19,7 +19,7 @@ export default function Jogo(props){
       
       
       function escolherPalavra(){
-         
+         palavras.sort(()=> Math.random() - 0.5);
          const palavraEscolhida = palavras[6];
          console.log(palavraEscolhida.length)
          setblock(false)
