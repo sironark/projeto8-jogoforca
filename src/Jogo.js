@@ -115,15 +115,15 @@ export default function Jogo(props){
       return(
           <>
          <div class="topJogo">
-         <img src={etapaForca} alt="forca"/>
+         <img src={etapaForca} alt="forca" data-test="game-image"/>
          <div className="topoDireito">
-         <button  onClick={escolherPalavra}>Escolher Palavra</button>
-         <div className={index}>{palavraChave}</div>
+         <button data-test="choose-word" onClick={escolherPalavra}>Escolher Palavra</button>
+         <div data-test="word" className={index}>{palavraChave}</div>
         </div>
         </div>
         <div className="teclado">
         {alfabeto.map((letra, indice)=>
-            <button disabled={block} className={habilitar} onClick={() => teclaBtn(indice,letra, block)}>{letra}</button>
+            <button data-test="letter" disabled={block} className={habilitar} onClick={() => teclaBtn(indice,letra, block)}>{letra}</button>
             )}
       
      
