@@ -14,12 +14,13 @@ export default function Jogo(props){
       let [palavraArray, setPalavraArray] = useState([])
       let [novaPalavraTraco, setNovaPalavra] = useState([])
       let arrayAuxiliar = [];
-         
+      let [count, setCount] =useState(0) ;
+      
       
       
       function escolherPalavra(){
          
-         const palavraEscolhida = palavras[0];
+         const palavraEscolhida = palavras[6];
          console.log(palavraEscolhida.length)
          setblock(false)
          setHabilitar("habilitar")
@@ -36,6 +37,8 @@ export default function Jogo(props){
             
            }
            setPalavraArray(arrayAuxiliar)
+           
+         
         
          console.log(novaPalavraTraco)
          //setetapa('./assets/img/forca0.png')
@@ -47,25 +50,25 @@ export default function Jogo(props){
      
       
 
-      function teclaBtn(i){
-         const aux = []
-         const letraClicada = alfabeto[i];
+      function teclaBtn(indice,letra, block){
+         let aux = []
+         const letraClicada = alfabeto[indice];
          let aux2 = []
-         aux2 = palavraChave
+         aux2 = [...palavraChave]
+
+         let perdeuPalavra = []
+         perdeuPalavra = [...palavraArray]
+
          
+        
          
          for(let u = 0; u < palavraArray.length; u++){
             if(letraClicada === palavraArray[u]){
                aux.push(u)
             } 
          }
+ 
 
-
-         if(aux.length === 0){
-            setetapa('./assets/img/forca1.png')
-         }
-
-         
          for (let u = 0; u< aux.length; u++){
             let position = aux[u]
             aux2[position] = letraClicada
@@ -74,6 +77,36 @@ export default function Jogo(props){
          
          setPalavraChave(aux2)
          console.log(aux2)
+
+
+         if(aux2.find(element => element === '_ ') === undefined){
+            setblock(true)
+            setIndex("verde")
+            setHabilitar("nhabilitado")
+
+         }
+         
+         if(aux.length === 0){
+            const auxCount = count + 1
+                   
+            setCount(auxCount) 
+
+            const fotoEtapa = `./assets/img/forca${String(auxCount)}.png`
+            setetapa(fotoEtapa)
+            aux = []
+
+            if(auxCount === 6){
+               setIndex("vermelha")
+               setblock(true)
+               setPalavraChave(perdeuPalavra)
+               setHabilitar("nhabilitado")
+               
+            }
+            
+
+         }
+
+            
       }
       
       
@@ -90,7 +123,7 @@ export default function Jogo(props){
         </div>
         <div className="teclado">
         {alfabeto.map((letra, indice)=>
-            <button disabled={block} className={habilitar} onClick={() => teclaBtn(indice)}>{letra}</button>
+            <button disabled={block} className={habilitar} onClick={() => teclaBtn(indice,letra, block)}>{letra}</button>
             )}
       
      
