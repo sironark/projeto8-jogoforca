@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import palavras from "./Palavras";
+import palavras from "./palavras";
 import alfabeto from "./Letras";
 
 
