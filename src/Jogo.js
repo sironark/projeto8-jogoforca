@@ -5,7 +5,7 @@ import alfabeto from "./Letras";
 
 
 
-export default function Jogo(props){
+export default function Jogo(){
       let [etapaForca, setetapa] = useState('./assets/img/forca0.png');
       let [palavraChave, setPalavraChave] = useState([])
       let[index, setIndex] = useState('palavraChave hide')
@@ -58,7 +58,7 @@ export default function Jogo(props){
      
       
 
-      function teclaBtn(indice,letra, block){
+      function teclaBtn(letra, indice){
          let aux = []
          const letraClicada = alfabeto[indice];
          let aux2 = []
@@ -68,7 +68,6 @@ export default function Jogo(props){
          perdeuPalavra = [...palavraArray]
 
          
-        
          
          for(let u = 0; u < palavraArray.length; u++){
             if(letraClicada === palavraArray[u]){
@@ -130,8 +129,8 @@ export default function Jogo(props){
         </div>
         </div>
         <div className="teclado">
-        {alfabeto.map((letra, indice)=>
-            <button data-test="letter" disabled={block} className={habilitar} onClick={() => teclaBtn(indice,letra, block)}>{letra}</button>
+        {alfabeto.map((letra, indice, props)=>
+            <button data-test="letter" disabled={block} className={habilitar} onClick={() => teclaBtn(letra, indice)}>{letra}</button>
             )}
       
      
