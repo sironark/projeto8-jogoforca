@@ -15,10 +15,16 @@ export default function Jogo(props){
       let [novaPalavraTraco, setNovaPalavra] = useState([])
       let arrayAuxiliar = [];
       let [count, setCount] =useState(0) ;
-      
+      let [contador,setContador] = useState(0);
       
       
       function escolherPalavra(){
+         
+         if(contador===1){
+            window.location.reload(false);
+            console.log("oi")
+         }
+
          palavras.sort(()=> Math.random() - 0.5);
          const palavraEscolhida = palavras[6];
          console.log(palavraEscolhida.length)
@@ -44,6 +50,8 @@ export default function Jogo(props){
          //setetapa('./assets/img/forca0.png')
          setIndex('palavraChave')
          setPalavraChave(novaPalavraTraco)
+         setContador(1)
+         
       }
       
       
