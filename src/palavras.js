@@ -23,6 +23,6 @@ let palavras = [
     "xadrez", "xilofone", "xarope", "xenofobia", "xereta", "xerife", "xaveco", "xixi", "xale",
     "zebra", "zagueiro", "zero", "zoeira", "zepelim", "zinco", "zumbido"
 ]
-//palavras = palavras.sort(() => Math.random() - 0.5);
+
 
 export default palavras
