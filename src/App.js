@@ -1,9 +1,6 @@
 import { useState } from "react";
 import palavras from "./palavras";
 
-
-
-
 import forca0 from './assets/img/forca0.png'
 import forca1 from './assets/img/forca1.png'
 import forca2 from './assets/img/forca2.png'
@@ -46,6 +43,8 @@ export default function App(){
 
       function teclaBtn(letra){
         
+      
+
         const novo = [...letraTeclada, letra];
         setLetraTeclada(novo);
         
@@ -66,6 +65,7 @@ export default function App(){
             if(novaPalavra.join('') === palavraSorteada.join('')){
                
                 setClassePalavra('verde');
+                setLetraTeclada([...alfabeto])
             }
            
 
